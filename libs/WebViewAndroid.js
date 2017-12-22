@@ -23,7 +23,8 @@ import {
     ReactNative,
     StyleSheet,
     View,
-    UIManager
+    UIManager,
+    findNodeHandle,
 }from 'react-native'
 //******************************结束************************************************//
 
@@ -42,7 +43,9 @@ import {
 // var requireNativeComponent = require('requireNativeComponent');
 // var resolveAssetSource = require('resolveAssetSource');
 
-var PropTypes = React.PropTypes;
+// var PropTypes = React.PropTypes;
+
+import PropTypes from 'prop-types';
 
 var RCT_WEBVIEW_REF = 'webviewandroid';
 
@@ -349,7 +352,7 @@ export default class WebViewAndroid extends React.Component {
     };
 
     getWebViewHandle = () => {
-        return ReactNative.findNodeHandle(this.refs[RCT_WEBVIEW_REF]);
+        return findNodeHandle(this.refs[RCT_WEBVIEW_REF]);
     };
 
     onLoadingStart = (event) => {
