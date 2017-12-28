@@ -25,6 +25,7 @@ import {
     View,
     UIManager,
     findNodeHandle,
+    ViewPropTypes
 }from 'react-native'
 //******************************结束************************************************//
 
@@ -68,7 +69,7 @@ var defaultRenderLoading = () => (
  */
 export default class WebViewAndroid extends React.Component {
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         renderError: PropTypes.func,
         renderLoading: PropTypes.func,
         onLoad: PropTypes.func,
@@ -81,7 +82,7 @@ export default class WebViewAndroid extends React.Component {
         onMessage: PropTypes.func,
         onContentSizeChange: PropTypes.func,
         startInLoadingState: PropTypes.bool, // force WebView to show loadingView on first load
-        style: View.propTypes.style,
+        style: ViewPropTypes.style,
 
         html: deprecatedPropType(
             PropTypes.string,
