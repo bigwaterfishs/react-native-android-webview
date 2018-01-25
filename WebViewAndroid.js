@@ -81,6 +81,7 @@ export default class WebViewAndroid extends React.Component {
         onNavigationStateChange: PropTypes.func,
         onMessage: PropTypes.func,
         onContentSizeChange: PropTypes.func,
+        mixedContentMode: PropTypes.string,
         startInLoadingState: PropTypes.bool, // force WebView to show loadingView on first load
         style: ViewPropTypes.style,
 
@@ -277,7 +278,7 @@ export default class WebViewAndroid extends React.Component {
                 onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
                 allowInterceptUrl={this.props.allowInterceptUrl}
                 injectFilterInterceptArray={this.props.injectFilterInterceptArray}
-
+                mixedContentMode={this.props.mixedContentMode}
             />;
 
         return (
